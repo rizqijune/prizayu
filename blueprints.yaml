@@ -1,0 +1,17 @@
+name: Prizayu
+slug: prizayu
+version: 1.0.0
+description: "A highly customized theme for PNYA.ID website. Based on [Tail](https://github.com/MarcelKr/grav-theme-tail) Theme."
+icon: empire
+author:
+  name: Muhammad Rizqi Juniyanto
+  email: rizqijune@pm.me
+  url: https://rizqijune.6l9.dev
+homepage: https://github.com/rizqijune/grav-prizayu
+demo: https://rizqijune.6l9.dev/prizayu
+keywords: blog, modern, responsive, tailwind, tailwindcss, html5, css3, pnya, pnyaid, rizqijune
+bugs: https://github.com/rizqijune/grav-prizayu/issues
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.7.46' }

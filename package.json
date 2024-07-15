@@ -1,0 +1,23 @@
+{
+  "name": "prizayu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "postcss.config.js",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.13",
+    "autoprefixer": "^10.4.19",
+    "browser-sync": "^3.0.2",
+    "cssnano": "^7.0.4",
+    "daisyui": "^4.12.10",
+    "postcss": "^8.4.39",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.5"
+  },
+  "scripts": {
+    "compile": "postcss css/main.css -o css-compiled/main.css",
+    "dev": "pnpm compile && browser-sync start --proxy '127.0.0.1' --files '/home/rizqijune/public_html/user/themes/prizayu/**/*' --watch --exec 'pnpm run compile'"
+  },
+  "keywords": [],
+  "author": "rizqijune",
+  "license": "MIT"
+}

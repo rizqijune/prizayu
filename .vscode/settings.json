@@ -1,0 +1,17 @@
+{
+    "prettier.configPath": ".prettierrc.json",
+    "emmet.includeLanguages": {
+        "twig": "html"
+    },
+    "tailwindcss-intellisense.trace.server": "messages",
+    "files.associations": {
+        "*.html": "twig",
+        "*.html.twig": "twig"
+    },
+    "tailwindCSS.includeLanguages": {
+        "twig": "html"
+    },
+    "html.autoClosingTags": true,
+    "html.suggest.html5": true,
+    "html.completion.attributeDefaultValue": "singlequotes",
+}

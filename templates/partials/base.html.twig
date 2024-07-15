@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
+	<head>
+		{% block head %}
+			<meta charset="utf-8"/>
+			<title>{{ header.title ? header.title ~ ' | ' : '' }}{{ site.title }}</title>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+			{% include 'partials/metadata.html.twig' %}
+
+			{% block stylesheets %}
+				{% do assets.addCss('theme://css-compiled/main.css') %}
+			{% endblock %}
+
+			{% block assets deferred %}
+				{{ assets.css()|raw }}
+			{% endblock %}
+		{% endblock head%}
+	</head>
+	<body class="{{ page.header.body_class }}leading-normal tracking-normal">
+		{% block header %}
+			{% include 'partials/header.html.twig' %}
+		{% endblock %}
+
+		{% block body %}
+		<main class="pt-16 mt-4 sm:mt-8 px-6 antialiased">
+		 <div class="flex flex-col justify-between items-center px-4 mx-auto max-w-screen-xl ">
+					{% block content %}{% endblock %}
+					</div>
+				</main>
+		{% endblock %}
+
+		{% block footer %}
+			{% include 'partials/footer.html.twig' %}
+		{% endblock %}
+
+		{% block javascripts %}{# {% script 'theme://js/index.js' at 'bottom' priority: 20 with { defer: false, async: false } %} #}
+			{# {% do assets.addJs('theme://js/index.js', {'priority':20, 'group':'bottom'}) %} #}
+			{# {% do assets.addJs('theme://js/index.js', {group:'bottom', type: 'module'}) %} #}
+			<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+		{% endblock %}
+
+		{{ assets.js()|raw }}
+
+		{% block bottom %}
+			{{ assets.js('bottom')|raw }}
+		{% endblock %}
+		{% if site.matomo.enabled %}
+			{% include 'partials/matomo.html.twig' %}
+		{% endif %}
+	</body>
+</html>

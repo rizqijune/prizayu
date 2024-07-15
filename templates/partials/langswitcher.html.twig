@@ -1,0 +1,18 @@
+{% extends 'partials/langswitcher-logic.html.twig' %}
+
+{% block language_block_start %}
+    <div class="card-actions items-center justify-center flex">
+{% endblock %}
+
+{% block language_block_end %}
+</div>
+{% endblock %}
+
+{% block language_item %}
+    {% if show_language %}
+        {% set active_bahasa = (language == langswitcher.current) ? 'btn-neutral btn-active btn-disabled' : 'btn-ghost' %}
+        <a href="{{ lang_url ~ uri.params ~ (uri.query|length > 1 ? '?' ~ uri.query) }}" class="btn external align-middle self-center {{ active_bahasa }}">
+            {% include 'partials/langswitcher-' ~ display_format ~ '.html.twig' %}
+        </a>
+    {% endif %}
+{% endblock %}

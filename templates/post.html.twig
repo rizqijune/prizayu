@@ -1,0 +1,22 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    <article class="max-w-xl mx-auto">
+        <header class="text-center mb-6 sm:mb-12">
+            <h1 class="text-2xl sm:text-4xl font-bold">{{ page.title }}</h1>
+            {% if page.header.headline %}
+                <h2 class="text-lg sm:text-xl font-light mb-2 sm:mb-3">{{ page.header.headline }}</h2>
+            {% endif %}
+            <h3 class="text-gray-600 font-light">
+                {{ page.header.date|date('d.') }}
+                {{ "GRAV.MONTHS_OF_THE_YEAR_SHORT"|ta(page.header.date|date('n') - 1) }}.
+                {{ page.header.date|date('Y') }}
+            </h3>
+        </header>
+        <section class="prose">
+            {{ page.content|raw }}
+        </section>
+    </article>
+
+    {% include 'partials/nav_prevnext.html.twig' %}
+{% endblock %}
