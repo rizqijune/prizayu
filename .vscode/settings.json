@@ -3,10 +3,13 @@
     "emmet.includeLanguages": {
         "twig": "html"
     },
-    "tailwindcss-intellisense.trace.server": "messages",
+    "tailwindcss-intellisense.trace.server": "off",
+    "editor.quickSuggestions": {
+        "strings": "on"
+    },
     "files.associations": {
         "*.html": "twig",
-        "*.html.twig": "twig"
+        "*.css": "tailwindcss"
     },
     "tailwindCSS.includeLanguages": {
         "twig": "html"
@@ -14,4 +17,30 @@
     "html.autoClosingTags": true,
     "html.suggest.html5": true,
     "html.completion.attributeDefaultValue": "singlequotes",
+    "tailwindCSS.colorDecorators": true,
+    "tailwindCSS.experimental.classRegex": [],
+    "tailwindCSS.codeActions": true,
+    "tailwindCSS.emmetCompletions": true,
+    "emmet.syntaxProfiles": {
+        "twig": "html"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingQuotes": "always",
+    "editor.formatOnType": true,
+    "auto-close-tag.activationOnLanguage": [
+       "*"
+    ],
+    "auto-close-tag.insertSpaceBeforeSelfClosingTag": true,
+    "auto-close-tag.SublimeText3Mode": true,
+    "auto-close-tag.fullMode": true,
+    "auto-rename-tag.activationOnLanguage": [
+
+        "*"
+    ],
+    "auto-close-tag.disableOnLanguage": [
+        "yaml",
+        "json",
+        "js"
+    ]
 }

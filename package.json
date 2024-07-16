@@ -11,11 +11,13 @@
     "daisyui": "^4.12.10",
     "postcss": "^8.4.39",
     "postcss-cli": "^11.0.0",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.5"
   },
   "scripts": {
+    "precompile": "rimraf css-compiled/*",
     "compile": "postcss css/main.css -o css-compiled/main.css",
-    "dev": "pnpm compile && browser-sync start --proxy '127.0.0.1' --files '/home/rizqijune/public_html/user/themes/prizayu/**/*' --watch --exec 'pnpm run compile'"
+    "dev": "pnpm compile && browser-sync start --proxy '127.0.0.1' --files '/home/rizqijune/public_html/user/themes/prizayu/**/*' --watch --exec 'pnpm precompile && pnpm compile'"
   },
   "keywords": [],
   "author": "rizqijune",

@@ -1,4 +1,4 @@
-<nav id="navigation" class="navbar top-0 fixed bg-base-30 backdrop-filter backdrop-blur-lg border-b border-gray-200">
+<nav id="navigation" class="navbar top-0 fixed bg-base-30 backdrop-filter backdrop-blur-lg border-b border-gray-200 dark:border-gray-800">
 	<div class="navbar-start">
 		<div class="dropdown">
 			<label for="my-drawer" role="button" class="btn btn-ghost btn-circle">
@@ -9,7 +9,7 @@
 		</div>
 	</div>
 	<div class="navbar-center">
-		<a class="btn btn-ghost text-xl">daisyUI</a>
+		<a href="{{ home_url }}" class="btn btn-ghost text-xl">{{ site.title }}</a>
 	</div>
 	<div class="navbar-end">
 
@@ -17,7 +17,7 @@
 			class="swap swap-rotate">
 			<!-- this hidden checkbox controls the state -->
 			<input
-			type="checkbox" class="theme-controller" data-key="user-theme" data-toggle-theme="dark,light" value="" data-act-class="light"/>
+			type="checkbox" class="theme-controller" data-toggle-theme="dark,light" value="" data-act-class="light"/>
 
 			<!-- sun icon -->
 			<svg class="swap-off h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">

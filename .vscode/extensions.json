@@ -4,6 +4,7 @@
         "bradlc.vscode-tailwindcss",
         "howardzuo.vscode-npm-dependency",
         "redhat.vscode-yaml",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "formulahendry.auto-complete-tag"
     ]
 }

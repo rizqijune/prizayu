@@ -4,7 +4,7 @@
 		{% block head %}
 			<meta charset="utf-8"/>
 			<title>{{ header.title ? header.title ~ ' | ' : '' }}{{ site.title }}</title>
-			<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 			{% include 'partials/metadata.html.twig' %}
 
 			{% block stylesheets %}
@@ -16,6 +16,7 @@
 			{% endblock %}
 		{% endblock head%}
 	</head>
+	
 	<body class="{{ page.header.body_class }}leading-normal tracking-normal">
 		{% block header %}
 			{% include 'partials/header.html.twig' %}
