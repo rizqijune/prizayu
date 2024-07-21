@@ -18,15 +18,17 @@
 	</head>
 
 	<body class="{{ page.header.body_class }}leading-normal tracking-normal">
+	
 		{% block drawerstart %}
 			{% include 'partials/drawer/opening.html.twig' %}
 		{% endblock %}
+
 		{% block header %}
 			{% include 'partials/header.html.twig' %}
 		{% endblock %}
 
 		{% block body %}
-			<main class="pt-16 mt-4 sm:mt-8 px-6 antialiased">
+			<main class="pt-20 mt-8 sm:mt-8 px-6 antialiased">
 				<div class="flex flex-col justify-between items-center px-4 mx-auto max-w-screen-xl ">
 					{% block content %}{% endblock %}
 				</div>

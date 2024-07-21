@@ -1,0 +1,51 @@
+{% set breadcrumbs = [] %}
+{% set parent = page %}
+{% set depth = 10 %}
+
+{# Loop through the page hierarchy #}
+{% for i in range(0, depth) %}
+	{% if parent %}
+		{% if parent.slug != 'pages' %}
+			{% set categories = parent.taxonomy['category'] %}
+			{% for category in categories %}
+				{% set category_url = base_url ~ '/' ~ category %}
+				{% set breadcrumbs = [{'title': category|capitalize, 'url': category_url}]|merge(breadcrumbs) %}
+			{% endfor %}
+			{% set breadcrumbs = [{'title': parent.title, 'url': parent.url}]|merge(breadcrumbs) %}
+		{% endif %}
+		{% set parent = parent.parent %}
+	{% else %}
+		{% set parent = null %}
+	{% endif %}
+{% endfor %}
+
+{% set breadcrumbs = breadcrumbs|reverse %}
+
+{% if breadcrumbs|length > 1 %}
+	{# We are using RDFa standard  #}
+	<nav id="breadcrumbs" class="breadcrumbs flex w-full ml-5">
+		<ol vocab="https://schema.org/" typeof="BreadcrumbList" class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+			<li property="itemListElement" typeof="ListItem" class="inline-flex items-center">
+				<a property="item" typeof="WebPage" href="{{ base_url }}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+					<span class="icon-[ph--house-simple] w-4 h-4 my-1"></span>
+					<span property="name" class="ml-2">Home</span>
+				</a>
+				<meta property="position" content="1">
+			</li>
+			{% for breadcrumb in breadcrumbs %}
+				<li property="itemListElement" typeof="ListItem" class="flex items-center">
+					<span class="icon-[ph--caret-right] w-4 h-4 mx-1"></span>
+					{% if not loop.last %}
+						<a property="item" typeof="WebPage" href="{{ breadcrumb.url }}" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">
+							<span property="name">{{ breadcrumb.title }}</span>
+						</a>
+						<meta property="position" content="2">
+					{% else %}
+						<span aria-current="page" property="name" class="ms-1 font-medium text-gray-500 md:ms-2 dark:text-gray-40">{{ breadcrumb.title }}</span>
+						<meta property="position" content="3">
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ol>
+	</nav>
+{% endif %}
