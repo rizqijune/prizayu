@@ -15,3 +15,16 @@ license: MIT
 
 dependencies:
   - { name: grav, version: '>=1.7.46' }
+form : 
+  validation: loose
+  fields:
+    custom_logo:
+      type: file
+      label: Custom Logo
+      size: large
+      destination: 'theme://images/logo'
+      multiple: false
+      markdown: true
+      description: Will be used instead of default logo `theme://images/grav-logo.svg`
+      accept:
+        - image/*
