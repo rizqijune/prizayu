@@ -19,7 +19,8 @@
   "scripts": {
     "precompile": "rimraf css-compiled/*",
     "compile": "postcss css/main.css -o css-compiled/main.css",
-    "dev": "node browser-sync.js"
+    "dev": "node browser-sync.js",
+    "prod": "NODE_ENV=production pnpm precompile && pnpm compile"
   },
   "keywords": [],
   "author": "rizqijune",
