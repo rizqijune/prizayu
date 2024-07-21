@@ -23,7 +23,7 @@
 
 {% if breadcrumbs|length > 1 %}
 	{# We are using RDFa standard  #}
-	<nav id="breadcrumbs" class="breadcrumbs flex w-full ml-5">
+	<nav id="breadcrumbs" class="breadcrumbs fixed top-16 bg-base-30 backdrop-filter backdrop-blur-lg border-b border-gray-200 dark:border-gray-800 flex w-full ml-5">
 		<ol vocab="https://schema.org/" typeof="BreadcrumbList" class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
 			<li property="itemListElement" typeof="ListItem" class="inline-flex items-center">
 				<a property="item" typeof="WebPage" href="{{ base_url }}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
@@ -34,7 +34,7 @@
 			</li>
 			{% for breadcrumb in breadcrumbs %}
 				<li property="itemListElement" typeof="ListItem" class="flex items-center">
-					<span class="icon-[ph--caret-right] w-4 h-4 mx-1"></span>
+					{# <span class="icon-[ph--caret-right] w-4 h-4 mx-1"></span> #}
 					{% if not loop.last %}
 						<a property="item" typeof="WebPage" href="{{ breadcrumb.url }}" class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">
 							<span property="name">{{ breadcrumb.title }}</span>

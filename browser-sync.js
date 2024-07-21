@@ -3,10 +3,8 @@ const { exec } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-// Get the current working directory
 const workingDir = process.cwd();
 
-// Function to clean compiled CSS
 function cleanCompiledCSS() {
   return new Promise((resolve, reject) => {
     const directory = path.join(workingDir, 'css-compiled');
@@ -26,7 +24,6 @@ function cleanCompiledCSS() {
   });
 }
 
-// Function to compile CSS
 function compileCSS() {
   return new Promise((resolve, reject) => {
     exec('pnpm compile', (err, stdout, stderr) => {
@@ -40,7 +37,6 @@ function compileCSS() {
   });
 }
 
-// Function to run precompile and compile
 async function precompileAndCompile() {
   try {
     await cleanCompiledCSS();
@@ -53,16 +49,15 @@ async function precompileAndCompile() {
 // Initialize BrowserSync
 browserSync.init({
   proxy: '127.0.0.1',
-  files: path.join(workingDir, '**/*'),
+  files: path.join(workingDir, 'templates/**/*'),
   watch: true,
   serveStatic: [workingDir]
 });
 
-// Watch files and recompile CSS on change
-browserSync.watch(path.join(workingDir, '**/*')).on('change', async (file) => {
+browserSync.watch(path.join(workingDir, 'templates/**/*')).on('change', async (file) => {
   await precompileAndCompile();
   browserSync.reload();
 });
 
-// Initial run to compile CSS
+
 precompileAndCompile();
