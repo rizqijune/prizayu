@@ -31,7 +31,6 @@
         {% set breadcrumbs = [blog_breadcrumb]|merge(breadcrumbs) %}
     {% endif %}
 {% endif %}
-{% set breadcrumbs = breadcrumbs|reverse %}
 
 {% if breadcrumbs|length > 1 %}
     {# We are using RDFa standard  #}
