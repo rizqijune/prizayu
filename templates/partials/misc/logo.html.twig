@@ -1,0 +1,5 @@
+{% if theme_config.custom_logo %}
+  <img src="{{ url('theme://images/logo/' ~ theme_config.custom_logo|first.name) }}" alt="{{ site.title }} Logo">
+{% else %}
+  <img src="{{ url('theme://images/grav-logo.svg') }}" alt="{{ site.title }} Logo">
+{% endif %}

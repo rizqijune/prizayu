@@ -5,6 +5,7 @@
         "howardzuo.vscode-npm-dependency",
         "redhat.vscode-yaml",
         "esbenp.prettier-vscode",
-        "formulahendry.auto-complete-tag"
+        "formulahendry.auto-complete-tag",
+        "antfu.iconify"
     ]
 }
