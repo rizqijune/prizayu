@@ -1,1 +1,14 @@
 enabled: true
+footer:
+  links:
+   - text: Terms & Conditions
+     url: '/terms'
+   - text: Privacy Policy
+     url: '/privacy-policy'
+  social:
+   - icon: 'icon-[arcticons--github]'
+     url: 'https://github.com/rizqijune'
+   - icon: 'icon-[arcticons--x-twitter]'
+     url: 'https://twitter.com/rizqijune'
+   - icon: 'icon-[arcticons--unstoppable]'
+     url: 'rizqijune.nft'
