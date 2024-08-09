@@ -1,9 +1,24 @@
 en:
-  GRAV:
-    MONTHS_OF_THE_YEAR_SHORT: [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
-de:
-  GRAV:
-    MONTHS_OF_THE_YEAR_SHORT: [Jan, Feb, Mär, Apr, Mai, Jun, Jul, Aug, Sep, Okt, Nov, Dez]
+  PNYA:
+    BLOG:
+      THEME:
+        MONTHS_OF_THE_YEAR_SHORT: [Jan, Feb, Mar, Apr, Mei, Jun, Jul, Agus, Sep, Okt, Nov, Des]
+    ADMIN:
+      THEME:
+        SLOGAN: Slogan   
+zh:
+  PNYA:
+    BLOG:
+      THEME:
+        MONTHS_OF_THE_YEAR_SHORT: [一月, 二月, 三月, 四月, 五月, 六月, 七月, 八月, 九月, 十月, 十一月, 十二月]
+    ADMIN:
+      THEME:
+        SLOGAN: 口号
 id:
-  GRAV:
-    MONTHS_OF_THE_YEAR_SHORT: [Jan, Feb, Mar, Apr, Mei, Jun, Jul, Agus, Sep, Okt, Nov, Des]
+  PNYA:
+    BLOG:
+      THEME:
+        MONTHS_OF_THE_YEAR_SHORT: [Jan, Feb, Mar, Apr, Mei, Jun, Jul, Agus, Sep, Okt, Nov, Des]
+    ADMIN:
+      THEME:
+        SLOGAN: Slogan   

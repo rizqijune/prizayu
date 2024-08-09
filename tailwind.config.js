@@ -70,6 +70,10 @@ module.exports = {
     'icon-[arcticons--x-twitter]',
     'icon-[arcticons--github]',
     'hidden',
+    'primary',
+    'secondary',
+    'accent',
+    'error'
   ],
   darkMode: ['selector', '[data-theme="dark"]'],
 }

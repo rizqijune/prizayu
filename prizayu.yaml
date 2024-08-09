@@ -8,7 +8,10 @@ footer:
   social:
    - icon: 'icon-[arcticons--github]'
      url: 'https://github.com/rizqijune'
+     color: 'neutral'
    - icon: 'icon-[arcticons--x-twitter]'
      url: 'https://twitter.com/rizqijune'
+     color: 'primary'
    - icon: 'icon-[arcticons--unstoppable]'
-     url: 'rizqijune.nft'
+     url: 'https://rizqijune.nft'
+     color: 'info'
