@@ -2,18 +2,19 @@
 
 {% block content %}
 <article class="w-full mx-auto">
+{# This is an example of modular hero component #}
     {# <header class="mb-6 text-center sm:mb-12">
         <h1 class="text-2xl font-bold sm:text-4xl">{{ page.title }}</h1>
         {% if page.header.headline %}
             <h2 class="mb-2 text-lg font-light sm:text-xl sm:mb-3">{{ page.header.headline }}</h2>
         {% endif %}
     </header> #}
-    <header class="min-h-screen mb-6 hero sm:mb-12">
+    {# <header class="min-h-screen mb-6 hero sm:mb-12">
   <div class="flex-col hero-content lg:flex-row-reverse">
    <div class="text-center lg:text-left">
             <h1 class="max-w-md text-4xl font-bold leading-snug sm:text-5xl sm:leading-snug">
               Reimagine shopping <br class="block sm:hidden" />
-              {# cart <br class="hidden sm:block" /> #}
+              {# cart <br class="hidden sm:block" />
               with <span class="px-2 pb-2 text-white bg-purple-600 rounded-xl">{{ site.title }}</span>
             </h1>
             <p class="mt-2 text-lg text-gray-600 sm:mt-8">{{config.theme.slogan|raw}}</p>
@@ -46,7 +47,7 @@
           <iframe class="h-[350px] lg:h-[500px] relative" src="https://my.spline.design/purple3diconscopy-84e3c54081fa398b60eb540e0cb81b10/" frameborder="0" width="100%" height="500px"></iframe>
         </div>
   </div>
-</header>
+</header> #}
 
     <div class="mx-auto prose dark:prose-invert">
         {{ page.content|raw }}

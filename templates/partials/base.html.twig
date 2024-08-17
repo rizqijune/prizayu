@@ -46,6 +46,9 @@
 		{% block javascripts %}
 			{% script 'theme://js/main.js' at 'bottom' priority: 20 with { async: true } %}
 			{% script 'theme://js/theme-change.js' at 'bottom' %}
+			{% if config.theme.header.announcement.enabled %}
+			{% script 'theme://js/header.js' at 'bottom' priority: 20 with { async: true } %}
+			{% endif %}
 			{# {% script 'https://talk.pnya.my.id/comments.php' at 'bottom' %} #}
 			{# {% do assets.addJs('theme://js/index.js', {group:'bottom', type: 'module'}) %} #}
 			{# {% script 'theme://js/main.js' at 'bottom' priority: 20 with { defer: false, async: true } %} #}

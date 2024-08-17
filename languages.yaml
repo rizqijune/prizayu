@@ -6,6 +6,7 @@ en:
     ADMIN:
       THEME:
         SLOGAN: Slogan   
+        HEADER: Header   
 zh:
   PNYA:
     BLOG:
@@ -14,6 +15,7 @@ zh:
     ADMIN:
       THEME:
         SLOGAN: 口号
+        HEADER: Header   
 id:
   PNYA:
     BLOG:
@@ -21,4 +23,5 @@ id:
         MONTHS_OF_THE_YEAR_SHORT: [Jan, Feb, Mar, Apr, Mei, Jun, Jul, Agus, Sep, Okt, Nov, Des]
     ADMIN:
       THEME:
-        SLOGAN: Slogan   
+        SLOGAN: Slogan
+        HEADER: Header   
