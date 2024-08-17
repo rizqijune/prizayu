@@ -18,13 +18,88 @@ dependencies:
 form : 
   validation: loose
   fields:
-    custom_logo:
-      type: file
-      label: Custom Logo
-      size: large
-      destination: 'theme://images/logo'
-      multiple: false
-      markdown: true
-      description: Will be used instead of default logo `theme://images/grav-logo.svg`
-      accept:
-        - image/*
+            
+    header_section:
+      type: fieldset
+      collapsible: true
+      collapsed: true
+      icon: header
+      title: PNYA.ADMIN.THEME.HEADER
+      fields:
+        
+        custom_logo:
+          type: file
+          label: Custom Logo
+          size: large
+          destination: 'theme://images/logo'
+          multiple: false
+          markdown: true
+          description: Will be used instead of default logo `theme://images/grav-logo.svg`
+          accept:
+            - image/*
+        slogan:
+          type: text
+          label: PNYA.ADMIN.THEME.SLOGAN
+        
+    announcement:
+         type: fieldset
+         collapsible: true
+         collapsed: true
+         icon: header
+         title: Announcement
+         active: 1
+         fields:
+           
+            header.announcement.enabled:
+              type: toggle
+              label: Enable Announcement
+              highlight: 1
+              default: 1
+              options:
+                1: 'Yes'
+                0: 'No'
+              validate:
+                type: bool
+
+            header.announcement.title_message:
+              type: text
+              label: Announcement Title Message
+              placeholder: 'Enter your announcement title message here'
+              default: 'Title'
+
+            header.announcement.message:
+              type: text
+              label: Announcement Message
+              placeholder: 'Enter your announcement message here'
+
+            header.announcement.background_color:
+              type: colorpicker
+              label: Background Color
+              default: '#8b5cf6'
+
+            header.announcement.text_color:
+              type: colorpicker
+              label: Text Color
+              default: '#FFFFFF'
+
+            header.announcement.btn_enabled:
+              type: toggle
+              label: Enable Announcement Button
+              highlight: 1
+              default: 1
+              options:
+                1: 'Yes'
+                0: 'No'
+              validate:
+                type: bool
+
+            header.announcement.btn_message:
+              type: text
+              label: Announcement Button Message
+              placeholder: 'Enter your announcement button message here'
+              default: 'Register now'
+
+            header.announcement.btn_color:
+              type: colorpicker
+              label: Button Color
+              default: '#000000'

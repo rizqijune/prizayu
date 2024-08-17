@@ -62,8 +62,18 @@ module.exports = {
     styled: true, // include daisyUI colors and design decisions for all components
     utils: true, // adds responsive and modifier utility classes
     logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
-    themeRoot: ":root", // The element that receives theme color CSS variables
+    themeRoot: ":root", // The element that receives theme color CSS variables default is :root
   },
   content: ['./templates/**/*.html.twig',],
+  safelist: [
+    'icon-[arcticons--unstoppable]',
+    'icon-[arcticons--x-twitter]',
+    'icon-[arcticons--github]',
+    'hidden',
+    'primary',
+    'secondary',
+    'accent',
+    'error'
+  ],
   darkMode: ['selector', '[data-theme="dark"]'],
 }

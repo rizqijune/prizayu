@@ -28,8 +28,8 @@
 		{% endblock %}
 
 		{% block body %}
-			<main class="pt-20 mt-8 sm:mt-8 px-6 antialiased">
-				<div class="flex flex-col justify-between items-center px-4 mx-auto max-w-screen-xl ">
+			<main class="px-6 pt-20 mt-8 antialiased sm:mt-8">
+				<div class="flex flex-col items-center justify-between max-w-screen-xl px-4 mx-auto ">
 					{% block content %}{% endblock %}
 				</div>
 			</main>
@@ -44,9 +44,15 @@
 		{% endblock %}
 
 		{% block javascripts %}
-			{% script 'theme://js/main.js' at 'bottom' priority: 20 with { defer: true, async: true } %}
-			{# {% do assets.addJs('theme://js/index.js', {'priority':20, 'group':'bottom'}) %} #}
-			{# {% do assets.addJs('theme://js/index.js', {group:'bottom', type: 'module'}) %} #}<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"> </script>
+			{% script 'theme://js/main.js' at 'bottom' priority: 20 with { async: true } %}
+			{% script 'theme://js/theme-change.js' at 'bottom' %}
+			{% if config.theme.header.announcement.enabled %}
+			{% script 'theme://js/header.js' at 'bottom' priority: 20 with { async: true } %}
+			{% endif %}
+			{# {% script 'https://talk.pnya.my.id/comments.php' at 'bottom' %} #}
+			{# {% do assets.addJs('theme://js/index.js', {group:'bottom', type: 'module'}) %} #}
+			{# {% script 'theme://js/main.js' at 'bottom' priority: 20 with { defer: false, async: true } %} #}
+			{# // <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"> </script> #}
 		{% endblock %}
 
 		{{ assets.js()|raw }}

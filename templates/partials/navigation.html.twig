@@ -1,35 +1,25 @@
-<nav id="navigation" class="navbar flex-col top-0 w-full fixed bg-base-30 backdrop-filter backdrop-blur-lg border-b border-gray-200 dark:border-gray-800">
-    <div class="flex flex-row justify-between w-full items-center px-4 py-2">
-      <div class="navbar-start">
-        <a href="{{ home_url }}" class="btn btn-ghost text-xl">{{ site.title }}</a>
-      </div>
-      <div class="flex items-center">
-        <label class="swap swap-rotate btn btn-circle btn-ghost mr-2">
-          <input id="theme-controller" type="checkbox" class="theme-controller" data-toggle-theme="dark,light" value="" data-act-class="light"/>
-          <span class="icon-[ph--sun] w-6 h-6 swap-off"></span>
-          <span class="icon-[ph--moon-stars] w-6 h-6 swap-on"></span>
-        </label>
-        <button class="btn btn-ghost btn-circle">
-          <div class="indicator">
-            <span class="icon-[ph--shopping-cart] h-6 w-6"></span>
-            <span class="badge badge-xs badge-primary indicator-item"></span>
-          </div>
-        </button>
-           
-        <label for="my-drawer" role="button" class="btn btn-ghost btn-circle">
-          <span class="icon-[ph--list] w-6 h-6"></span>
-        </label>
-      <div class="hidden">Just a div to exclude the hidden class to be purged</div>
-      </div>
+<nav id="navigation" class="fixed z-10 flex-col w-full border-b border-gray-200 top-0 navbar bg-base-30 backdrop-filter backdrop-blur-lg dark:border-gray-800">
+    <div class="flex flex-row items-center justify-between w-full px-4 py-2">
+        <div class="navbar-start">
+            <a href="{{ home_url }}" class="text-xl btn btn-ghost">{{ site.title }}</a>
+        </div>
+        <div class="flex items-center">
+            <label class="mr-2 swap swap-rotate btn btn-circle btn-ghost">
+                <input id="theme-controller" type="checkbox" class="theme-controller" data-toggle-theme="dark,light" value="" data-act-class="light"/>
+                <span class="icon-[ph--sun] w-6 h-6 swap-off"></span>
+                <span class="icon-[ph--moon-stars] w-6 h-6 swap-on"></span>
+            </label>
+            <button class="btn btn-ghost btn-circle">
+                <div class="indicator">
+                    <span class="icon-[ph--shopping-cart] h-6 w-6"></span>
+                    <span class="badge badge-xs badge-primary indicator-item"></span>
+                </div>
+            </button>
+            <label for="my-drawer" role="button" class="btn btn-ghost btn-circle">
+                <span class="icon-[ph--list] w-6 h-6"></span>
+            </label>
+        </div>
     </div>
-  </nav>
-  {% include "partials/misc/breadcrumb.html.twig" %}
-{# <nav  class="fixed w-full flex flex-row justify-center sm:justify-end z-30 top-0 bg-white text-primary"> #}
-{# <ul class="flex flex-row mt-0 py-2 px-6 font-light"> #}
-{# {% for page in pages.children.visible %} #}
-{# <li class="mr-6 last:mr-0 no-underline"> #}
-{# <a href="{{ page.url }}">{{ page.menu }}</a> #}
-{# </li> #}
-{# {% endfor %} #}
-{# </ul> #}
-{# </nav> #}
+</nav>
+
+{% include "partials/misc/breadcrumb.html.twig" %}

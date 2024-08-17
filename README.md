@@ -1,6 +1,11 @@
 # Prizayu for Grav
 
-![](assets/tail-screenshot.jpg)
+
+
+| ![Desktop](https://i.ibb.co.com/F8gYVTd/screenshot-rocks.png) | ![Mobile](https://i.ibb.co.com/9ZcMmwt/screenshot-rocks.jpg) |
+| :----------------------------------------------------------: | ------------------------------------------------------------ |
+
+
 
 based by grav theme [Tail](https://github.com/getgrav/grav-theme-tail)
 
