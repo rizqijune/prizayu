@@ -1,6 +1,8 @@
 # Prizayu for Grav
 
+> **Warning: This theme is still at the development phase! But you can use this theme as a base feel free to fork and use it.**
 
+## Preview
 
 | ![Desktop](https://i.ibb.co.com/F8gYVTd/screenshot-rocks.png) | ![Mobile](https://i.ibb.co.com/9ZcMmwt/screenshot-rocks.jpg) |
 | :----------------------------------------------------------: | ------------------------------------------------------------ |
@@ -15,7 +17,8 @@ based by grav theme [Tail](https://github.com/getgrav/grav-theme-tail)
 * Made with [Tailwindcss](https://tailwindcss.com/) X [DaisyUI](https://daisyui.com)
 * Fully responsive
 * Multiple page template types
-* Matomo-Support
+* ~~Matomo-Support~~
+* Add additional links in drawer menu.
 
 ## Supported Page Templates
 
@@ -44,7 +47,7 @@ Installing the Prizayu theme can be done in manual way. Because this theme is st
 
 ## Manual Installation
 
-To install this theme, just download the zip version of this repository and unzip it under `/your/site/grav/user/themes`. Then, rename the folder to `prizayu`. You can find these files either on [GitHub](https://github.com/rizqijune/prizayu).
+To install this theme, just download the zip version of this repository and unzip it under `/your/site/grav/user/themes`. Then, rename the folder to `prizayu`. You can find these files on [GitHub](https://github.com/rizqijune/prizayu).
 
 You should now have all the theme files under
 
@@ -52,39 +55,10 @@ You should now have all the theme files under
 
 # Site options
 
-## Footer
-The footer links can be adapted in your `site.yaml` like this:
+## Links (Beta)
+You can add additional links to show at the drawer menu. Just go to the theme settings and add your links!
 
-    footer:
-      links:
-        - text: Terms
-          url: '/datenschutz'
-        - text: Conditions
-          url: '/impressum'
-      social:
-        - icon: gitlab
-          url: https://gitlab.com/marcelkr
-        - icon: github
-          url: https://gitlab.com/marcelkr
-
-To use the social links with icons install [
-grav-plugin-embed-fontawesome](https://github.com/N-Parsons/grav-plugin-embed-fontawesome) and follow the steps to set up the SVG files needed. 
-
-> Will be removed completely in the future.
-
-## Matomo
-Matomo is also configured via `site.yaml`. This is how a sample configuration:
-
-    matomo:
-        enabled: true
-        matomo_url: matomo.mysite.de
-        site_id: 1
-
-Once enabled, the partial `partials/matomo.html.twig` is included in the base template.
-`matomo_url` denotes the matomo URL. `site_id` configures the site ID used in Matomo.
-If you have several sites configured it might be != 1.
-
-> Will be using easiest way for user to configurate it in the future.
+> You need to add the icons to the safelist at the tailwind.config.js before using it. We will tried to use another method in the future. But right now we will just using this method in the meantime.
 
 # Style customizing
 Most of the style can be customized by adapting the `class` attributes in the templates. This is the idea of tailwindcss's [Utility-First Approach](https://tailwindcss.com/docs/utility-first).

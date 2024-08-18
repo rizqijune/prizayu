@@ -24,7 +24,7 @@
 			</ul>
 			<h6 class="p-1 px-3 text-xs text-gray-500 uppercase dark:text-gray-400">Legal</h6>
 			<ul class="font-bold menu">
-				{% for link in config.theme.footer.links %}
+				{% for link in config.theme.footer %}
 					<li><a href="{{ link.url }}">{{ link.text }}</a></li>
 
 				{% endfor %}
@@ -36,7 +36,7 @@
 			</div>
 			<nav class="grid grid-flow-col gap-4 ">
 				<div class="place-self-center">
-					{% for link in config.theme.footer.social %}
+					{% for link in config.theme.social %}
 						<a class="px-2 btn-circle btn hover:btn-{{ link.color }}" href="{{ link.url }}">
 							<span class="{{ link.icon }} w-7 h-7"></span>
 						</a>
