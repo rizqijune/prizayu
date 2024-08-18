@@ -1,27 +1,46 @@
 en:
-  PNYA:
-    BLOG:
-      THEME:
-        MONTHS_OF_THE_YEAR_SHORT: [Jan, Feb, Mar, Apr, Mei, Jun, Jul, Agus, Sep, Okt, Nov, Des]
-    ADMIN:
-      THEME:
-        SLOGAN: Slogan   
-        HEADER: Header   
+    PNYA:
+        BLOG:
+            THEME:
+                MONTHS_OF_THE_YEAR_SHORT: [Jan, Feb, Mar, Apr, Mei, Jun, Jul, Agus, Sep, Okt, Nov, Des]
+        ADMIN:
+            THEME:
+                SLOGAN: Slogan
+                HEADER: Header
+                FOOTER: Footer
+                ANNOUNCEMENT: Announcement
+                CUSTOM_LOGO: Custom Logo
+                ENABLE: Enable
+                DISABLE: Disable
+                TITLE: Title
+                MESSAGE: Message
+                BG_COLOR: Background Color
+                TEXT_COLOR: Text Color
+                BTN: Button
+                COLOR: Color
+                PLACEHOLDER: Enter some text here
+                READ_MORE: Read more
+                LINKS: Links
+
 zh:
-  PNYA:
-    BLOG:
-      THEME:
-        MONTHS_OF_THE_YEAR_SHORT: [一月, 二月, 三月, 四月, 五月, 六月, 七月, 八月, 九月, 十月, 十一月, 十二月]
-    ADMIN:
-      THEME:
-        SLOGAN: 口号
-        HEADER: Header   
+    PNYA:
+        BLOG:
+            THEME:
+                MONTHS_OF_THE_YEAR_SHORT: [一月, 二月, 三月, 四月, 五月, 六月, 七月, 八月, 九月, 十月, 十一月, 十二月]
+        ADMIN:
+            THEME:
+                SLOGAN: 口号
+                HEADER: Header
+                FOOTER: Footer
+                ANNOUNCEMENT: Announcement
 id:
-  PNYA:
-    BLOG:
-      THEME:
-        MONTHS_OF_THE_YEAR_SHORT: [Jan, Feb, Mar, Apr, Mei, Jun, Jul, Agus, Sep, Okt, Nov, Des]
-    ADMIN:
-      THEME:
-        SLOGAN: Slogan
-        HEADER: Header   
+    PNYA:
+        BLOG:
+            THEME:
+                MONTHS_OF_THE_YEAR_SHORT: [Jan, Feb, Mar, Apr, Mei, Jun, Jul, Agus, Sep, Okt, Nov, Des]
+        ADMIN:
+            THEME:
+                SLOGAN: Slogan
+                HEADER: Header
+                FOOTER: Footer
+                ANNOUNCEMENT: Pemberitahuan
