@@ -26,7 +26,7 @@ function cleanCompiledCSS() {
 
 function compileCSS() {
   return new Promise((resolve, reject) => {
-    exec('pnpm compile', (err, stdout, stderr) => {
+    exec('bun compile', (err, stdout, stderr) => {
       if (err) {
         console.error(stderr);
         return reject(err);

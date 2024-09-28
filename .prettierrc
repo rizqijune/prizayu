@@ -1,0 +1,8 @@
+{
+  "printWidth": 80,
+  "tabWidth": 4,
+  "twigAlwaysBreakObjects": false,
+  "twigOutputEndblockName": true,
+  "twigmultitags": [    "block,endblock",    "switch,case,default,endswitch",    "ifchildren,endifchildren",    "cache,endcache"],
+  "plugins": ["@zackad/prettier-plugin-twig", "prettier-plugin-tailwindcss"]
+}
