@@ -138,6 +138,11 @@ form:
             grid: Grid View
             both: User preference (Both)
           default: both
+        post.subtitle.text:
+          type: text
+          label: Subtitle
+          placeholder: Input your subtitle of post-list page here
+          default: Check out our latest posts, reviews, and guides.
 
     links:
       type: fieldset

@@ -4,48 +4,47 @@
 {% block content %}
 	{{ page.content|raw }}
 	{# {/* prettier-ignore-end */} #}
-	<div class="w-full mx-auto">
+	<div class="w-full mx-auto mb-10">
 		<div class="flex justify-between mb-4">
-			<h2 class="text-lg font-bold">
-				Posts
-			</h2>
+			<div class="">
+				<h2 class="text-lg font-bold">
+					Our
+					{{ "PNYA.BLOG.THEME.POSTS"|t|e }}
+				</h2>
+				<p class="text-sm text-gray-600">{{ config.theme.post.subtitle.text }}</p>
+			</div>
 			{% if config.theme.post.list.style == 'both' %}
-				<div class="flex">
-					<a href="{{ (uri.query('view') == 'grid' ? '?view=list' : '?view=grid') }}" class="mr-2 btn btn-primary">
+				<div class="flex tooltip tooltip-bottom tooltip-info hover:tooltip-open" data-tip="Post View Mode">
+					<a href="{{ (uri.query('view') == 'grid' ? '?view=list' : '?view=grid') }}" class="mr-2 btn btn-primary btn-circle">
 						{% if uri.query('view') == 'list' %}
-							<svg
-								class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-								<!-- List Icon -->
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-							</svg>
+						<span class="icon-[ph--grid-four-bold] w-6 h-6"></span>
 						{% else %}
-							<svg
-								class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
-								<!-- Grid Icon -->
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h6v6H3zM9 9h6v6H9zM3 9h6v6H3zM9 3h6v6H9z"/>
-							</svg>
+					<span class="icon-[ph--list-dashes-bold] w-6 h-6"></span>
 						{% endif %}
 					</a>
 				</div>
 			{% endif %}
 		</div>
 
+
 		{% if uri.query('view') %}
 			{% set view_mode = uri.query('view') %}
 		{% else %}
 			{% set view_mode = config.theme.post.list.style %}
 		{% endif %}
-
+		{% set options = { items: {'@page.children': '/blog'}, 'limit': 6, 'order': {'by': 'date', 'dir': 'desc'}, 'pagination': true } %}
+		{% set my_collection = page.collection(options) %}
 		<ul id="postList" class="grid gap-6 {% if view_mode == 'grid' %}grid-cols-2 md:grid-cols-3{% else %}grid-cols-1{% endif %}">
-			{% for post in page.collection %}
+			{% for post in my_collection %}
 				<li
 					class="relative overflow-hidden rounded-lg shadow-lg post-item">
 					<!-- Card Link -->
 					<a
 						href="{{ post.url }}" class="block card-bordered border-neutral-400 dark:border-zinc-700 card-compact card">
 						<!-- Image Section -->
+
 						<figure class="relative overflow-hidden rounded-lg">
-							<img class="object-cover w-full h-48" src="{{ post.media.images|first.url }}" alt="{{ post.title }}"/>
+							<img class="object-cover w-full h-48" src="{% if post.media.images is not empty %}{{ post.media.images|first.url }} {% else %} data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22600%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20600%20400%22%20preserveAspectRatio%3D%22none%22%3E%0A%20%20%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%20%20%3Cstyle%20type%3D%22text%2Fcss%22%3E%0A%20%20%20%20%20%20%20%20%20%20%23holder%20text%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20fill%3A%20%23000000%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-family%3A%20sans-serif%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%2040px%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20font-weight%3A%20800%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%3C%2Fstyle%3E%0A%20%20%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%20%20%3Cg%20id%3D%22holder%22%3E%0A%20%20%20%20%20%20%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%23b6a6ed%22%3E%3C%2Frect%3E%0A%20%20%20%20%20%20%20%20%3Cg%3E%0A%20%20%20%20%20%20%20%20%20%20%3Ctext%20text-anchor%3D%22middle%22%20x%3D%2250%25%22%20y%3D%2250%25%22%20dy%3D%22.3em%22%3E{{ post.title }}%3C%2Ftext%3E%0A%20%20%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fsvg%3E {% endif %}" alt="{{ post.title }}"/>
 							{% if view_mode == 'grid' %}
 								<!-- Overlay content for grid mode -->
 								<div class="absolute bottom-0 left-0 w-full p-4 text-white rounded-lg bg-gradient-to-t from-black to-transparent">
