@@ -20,11 +20,11 @@
 	<body class="{{ page.header.body_class }}leading-normal tracking-normal">
 	
 		{% block drawerstart %}
-			{% include 'partials/drawer/opening.html.twig' %}
+			{% include 'partials/components/drawer/opening.html.twig' %}
 		{% endblock %}
 
 		{% block header %}
-			{% include 'partials/header.html.twig' %}
+			{% include 'partials/components/header.html.twig' %}
 		{% endblock %}
 
 		{% block body %}
@@ -36,11 +36,11 @@
 		{% endblock %}
 
 		{% block footer %}
-			{% include 'partials/footer.html.twig' %}
+			{% include 'partials/components/footer.html.twig' %}
 		{% endblock %}
 		{% block drawerend %}
-			{% include 'partials/drawer/closing.html.twig' %}
-			{% include 'partials/bottom-nav.html.twig' %}
+			{% include 'partials/components/drawer/closing.html.twig' %}
+			{% include 'partials/components/bottom-nav.html.twig' %}
 		{% endblock %}
 
 		{% block javascripts %}

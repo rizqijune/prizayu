@@ -25,8 +25,9 @@
 			<h6 class="p-1 px-3 text-xs text-gray-500 uppercase dark:text-gray-400">Legal</h6>
 			<ul class="font-bold menu">
 				{% for link in config.theme.footer %}
-					<li><a href="{{ link.url }}">{{ link.text }}</a></li>
-
+					<li>
+						<a href="{{ link.url }}">{{ link.text }}</a>
+					</li>
 				{% endfor %}
 			</ul>
 		</nav>
@@ -48,5 +49,4 @@
 	</div>
 	{# Drawer side close tag #}
 </div>
-{# Drawer close tag #}
-</div>
+{# Drawer close tag #}</div>

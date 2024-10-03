@@ -17,9 +17,9 @@
 				<div class="flex tooltip tooltip-bottom tooltip-info hover:tooltip-open" data-tip="Post View Mode">
 					<a href="{{ (uri.query('view') == 'grid' ? '?view=list' : '?view=grid') }}" class="mr-2 btn btn-primary btn-circle">
 						{% if uri.query('view') == 'list' %}
-						<span class="icon-[ph--grid-four-bold] w-6 h-6"></span>
+						<span class="icon-[ph--grid-four-bold] w-6 h-6 text-base-100"></span>
 						{% else %}
-					<span class="icon-[ph--list-dashes-bold] w-6 h-6"></span>
+					<span class="icon-[ph--list-dashes-bold] w-6 h-6 text-base-100"></span>
 						{% endif %}
 					</a>
 				</div>
@@ -103,7 +103,7 @@
 
 		{# Pagination if enabled #}
 		{% if config.plugins.pagination.enabled and page.collection.params.pagination %}
-			{% include 'partials/pagination.html.twig' with {
+			{% include 'partials/layout/pagination.html.twig' with {
         base_url: page.url,
         pagination: collection.params.pagination
       } %}
