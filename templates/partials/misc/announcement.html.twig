@@ -1,6 +1,6 @@
 <div id="announcement" class="fixed top-0 w-full z-10 flex items-center justify-between gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5" style="background-color: {{ config.theme.header.announcement.background_color }};">
 	<div class="flex-1 min-w-0" onclick="announcement_dialog.showModal()">
-		<p class="text-sm leading-6 text-nowrap truncate" style="color: {{ config.theme.header.announcement.text_color }};">
+		<p class="text-sm leading-6 truncate text-nowrap" style="color: {{ config.theme.header.announcement.text_color }};">
 			<strong class="font-semibold">{{ config.theme.header.announcement.title_message|e }}</strong>
 			<svg viewbox="0 0 2 2" class="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
 				<circle cx="1" cy="1" r="1"/>
@@ -30,7 +30,7 @@
 		<p class="py-4 text-pretty">{{ config.theme.header.announcement.message|e }}</p>
 		<div class="modal-action">
 			{% if config.theme.header.announcement.btn_enabled %}
-				<button class="btn btn-primary text-neutral-100">{{ config.theme.header.announcement.btn_message|e }}</button>
+				<a class="btn btn-primary text-neutral-100" href="{{config.theme.header.announcement.btn_url|e}}">{{ config.theme.header.announcement.btn_message|e }}</a>
 			{% endif %}
 			<form method="dialog">
 				<button class="btn">Close</button>

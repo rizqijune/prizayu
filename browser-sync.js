@@ -26,7 +26,7 @@ function cleanCompiledCSS() {
 
 function compileCSS() {
   return new Promise((resolve, reject) => {
-    exec('pnpm compile', (err, stdout, stderr) => {
+    exec('bun compile', (err, stdout, stderr) => {
       if (err) {
         console.error(stderr);
         return reject(err);
@@ -51,6 +51,7 @@ browserSync.init({
   proxy: '127.0.0.1',
   files: path.join(workingDir, 'templates/**/*'),
   watch: true,
+  open: false,
   serveStatic: [workingDir]
 });
 

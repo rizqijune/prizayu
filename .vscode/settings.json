@@ -1,5 +1,5 @@
 {
-    "prettier.configPath": ".prettierrc.json",
+    "prettier.configPath": ".prettierrc",
     "emmet.includeLanguages": {
         "twig": "html"
     },
@@ -42,5 +42,10 @@
         "yaml",
         "json",
         "js"
+    ],
+    "prettier.documentSelectors": [
+        "twig",
+        ".twig.html",
+        ".twig"
     ]
 }

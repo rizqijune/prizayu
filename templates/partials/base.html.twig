@@ -6,7 +6,7 @@
 			<title>{{ header.title ? header.title ~ ' | ' : '' }}{{ site.title }}</title>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 			{% include 'partials/metadata.html.twig' %}
-
+			<link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
 			{% block stylesheets %}
 				{% do assets.addCss('theme://css-compiled/main.css') %}
 			{% endblock %}
@@ -20,11 +20,11 @@
 	<body class="{{ page.header.body_class }}leading-normal tracking-normal">
 	
 		{% block drawerstart %}
-			{% include 'partials/drawer/opening.html.twig' %}
+			{% include 'partials/components/drawer/opening.html.twig' %}
 		{% endblock %}
 
 		{% block header %}
-			{% include 'partials/header.html.twig' %}
+			{% include 'partials/components/header.html.twig' %}
 		{% endblock %}
 
 		{% block body %}
@@ -36,11 +36,11 @@
 		{% endblock %}
 
 		{% block footer %}
-			{% include 'partials/footer.html.twig' %}
+			{% include 'partials/components/footer.html.twig' %}
 		{% endblock %}
 		{% block drawerend %}
-			{% include 'partials/drawer/closing.html.twig' %}
-			{% include 'partials/bottom-nav.html.twig' %}
+			{% include 'partials/components/drawer/closing.html.twig' %}
+			{% include 'partials/components/bottom-nav.html.twig' %}
 		{% endblock %}
 
 		{% block javascripts %}

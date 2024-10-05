@@ -1,0 +1,43 @@
+{% set pagination = pagination|default(page.collection.params.pagination) %}
+{% set base_url = base_url|default(page.url) %}
+{% set view_mode = uri.query('view')|default(config.theme.post.list.style) %}
+{% set view_param = 'view=' ~ view_mode %}
+{% set current_query = uri.query() %}
+
+{% set base_query = '' %}
+
+{% if current_query %}
+    {% set query_params = current_query|split('?') %}
+    {% for param in query_params if not param.startsWith('view=') %}
+        {% set base_query = base_query ~ '?' ~ param %}
+    {% endfor %}
+{% endif %}
+
+{% if pagination|length > 1 %}
+    <div class="flex flex-row justify-center mt-12 text-primary join">
+        {# Previous button #}
+        {% if pagination.hasPrev %}
+                <a rel="prev" class="font-bold btn join-item text-primary" href="{{ base_url ~ pagination.prevUrl ~ base_query }}">&laquo;</a>
+        {% else %}
+                <span class="font-bold btn join-item text-primary">&laquo;</span>
+        {% endif %}
+
+        {# Page numbers #}
+        {% for paginate in pagination %}
+            {% if paginate.isCurrent %}
+                <span class="font-bold text-white hover:text-primary bg-primary btn join-item">{{ paginate.number }}</span>
+            {% elseif paginate.isInDelta %}
+                    <a class="font-bold text-primary btn join-item" href="{{ base_url ~ paginate.url ~ base_query }}">{{ paginate.number }}</a>
+            {% elseif paginate.isDeltaBorder %}
+        <span>&hellip;</span>
+            {% endif %}
+        {% endfor %}
+
+        {# Next button #}
+        {% if pagination.hasNext %}
+                <a rel="next"  class="font-bold text-primary btn join-item" href="{{ base_url ~ pagination.nextUrl ~ base_query }}">&raquo;</a>
+        {% else %}
+            <span class="font-bold text-primary btn join-item">&raquo;</span>
+        {% endif %}
+    </div>
+{% endif %}
